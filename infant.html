@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Login – Arial WebShopping</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+  body {
+    background: #f3f5ff;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  .container {
+    background: white;
+    padding: 25px 30px;
+    width: 350px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.12);
+  }
+
+  h2 {
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+
+  .motto {
+    text-align: center;
+    font-size: 12px;
+    color: gray;
+    margin-bottom: 20px;
+  }
+
+  input[type="text"], input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #bbb;
+    border-radius: 6px;
+  }
+
+  .btn {
+    width: 100%;
+    padding: 10px;
+    background: #3b5bdb;
+    color: white;
+    border: none;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+
+  .btn:hover {
+    background: #334fcb;
+  }
+
+  .remember {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+
+  .link {
+    text-align: center;
+    margin-top: 12px;
+  }
+
+  a {
+    text-decoration: none;
+    color: #3b5bdb;
+  }
+</style>
+
+<script>
+function validateLogin() {
+  const email = document.getElementById("email").value;
+  const pwd = document.getElementById("password").value;
+
+  if (!email.includes("@")) {
+    alert("Email should contain @");
+    return false;
+  }
+
+  if (pwd.length < 8) {
+    alert("Password must be at least 8 characters.");
+    return false;
+  }
+
+  alert("Login Successful!");
+  return true;
+}
+</script>
+
+</head>
+<body>
+
+<div class="container">
+  <h2>Arial WebShopping</h2>
+  <div class="motto">Your trusted place for smart online shopping</div>
+
+  <form onsubmit="return validateLogin()">
+    <label>Email:</label>
+    <input type="email" id="email" placeholder="Enter Email">
+
+    <label>Password:</label>
+    <input type="password" id="password" placeholder="Enter Password">
+
+    <div class="remember">
+      <input type="checkbox" id="remember"> &nbsp; Remember Me
+    </div>
+
+    <button class="btn" type="submit">Login</button>
+
+    <div class="link">
+      New user? <a href="signup.html">Create an Account</a>
+    </div>
+  </form>
+</div>
+
+</body>
+</html>
