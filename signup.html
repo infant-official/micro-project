@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Signup – Arial WebShopping</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+  body {
+    background: #eef2ff;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  .container {
+    background: white;
+    padding: 25px 30px;
+    width: 380px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.12);
+  }
+
+  h2 {
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+
+  .motto {
+    text-align: center;
+    font-size: 12px;
+    color: gray;
+    margin-bottom: 20px;
+  }
+
+  input[type="text"], input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #bbb;
+    border-radius: 6px;
+  }
+
+  .btn {
+    width: 100%;
+    padding: 10px;
+    background: #3b5bdb;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  .btn:hover {
+    background: #334fcb;
+  }
+
+  .link {
+    text-align: center;
+    margin-top: 12px;
+  }
+
+  a {
+    text-decoration: none;
+    color: #3b5bdb;
+  }
+</style>
+
+<script>
+function validateSignup() {
+  const email = document.getElementById("email").value;
+  const pwd = document.getElementById("password").value;
+  const confirm = document.getElementById("confirmPassword").value;
+
+  if (!email.includes("@")) {
+    alert("Email should contain @");
+    return false;
+  }
+
+  if (pwd.length < 8) {
+    alert("Password must be at least 8 characters.");
+    return false;
+  }
+
+  if (pwd !== confirm) {
+    alert("Passwords do not match.");
+    return false;
+  }
+
+  alert("Account Created Successfully!");
+  return true;
+}
+</script>
+
+</head>
+<body>
+
+<div class="container">
+  <h2>Arial WebShopping</h2>
+  <div class="motto">Start your journey with safe and simple shopping</div>
+
+  <form onsubmit="return validateSignup()">
+    <label>Full Name:</label>
+    <input type="text" id="name" placeholder="Enter Full Name" required>
+
+    <label>Email:</label>
+    <input type="email" id="email" placeholder="Enter Email" required>
+
+    <label>Password:</label>
+    <input type="password" id="password" placeholder="Create Password" required>
+
+    <label>Confirm Password:</label>
+    <input type="password" id="confirmPassword" placeholder="Re-enter Password" required>
+
+    <button class="btn" type="submit">Create Account</button>
+
+    <div class="link">
+      Already have an account? <a href="login.html">Login Here</a>
+    </div>
+  </form>
+</div>
+
+</body>
+</html>
